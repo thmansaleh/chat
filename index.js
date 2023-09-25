@@ -13,7 +13,7 @@ const io = new Server(httpServer,{
 io.on('connection', socket => {
 
   socket.on('message', data => {
-    // console.log(`Received: ${data}`);
+    console.log(`Received: ${data}`);
 
     io.emit('message',` ${data}`);
   });
@@ -22,4 +22,4 @@ io.on('connection', socket => {
 });
 
 
-httpServer.listen(3500,()=> console.log(`listen on port`))
+httpServer.listen(3500,()=> console.log(`listen on port 3500`))
