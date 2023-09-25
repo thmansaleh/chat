@@ -21,5 +21,5 @@ io.on('connection', socket => {
 
 });
 
-
-httpServer.listen(3500,()=> console.log(`listen on port 3500`))
+const port =process.env.PORT
+httpServer.listen(port?port:3500,()=> console.log(`listen on port ${port?port:3500}`))
