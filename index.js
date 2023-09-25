@@ -1,25 +1,16 @@
-// Import the 'ws' library
-import {createServer} from "http"
-import {Server} from "socket.io"
+// Import the Express.js library
+const express = require('express');
 
+// Create an instance of the Express application
+const app = express();
 
-// Create a WebSocket server
-const httpServer = createServer()
-const io = new Server(httpServer,{
-  cors:{
-    origin:"*"
-  }
-})
-io.on('connection', socket => {
-
-  socket.on('message', data => {
-    console.log(`Received: ${data}`);
-
-    io.emit('message',` ${data}`);
-  });
-
-
+// Define a route that responds with "Hello, World!" when accessed
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
 });
 
-const port =process.env.PORT
-httpServer.listen(port?port:3500,()=> console.log(`listen on port ${port?port:3500}`))
+// Start the server on port 3000
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
