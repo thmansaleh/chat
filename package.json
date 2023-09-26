@@ -2,8 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "test",
-  "main": ".",
-  "type": "module",
+  "main": "."
   "scripts": {
     "start": "node .",
     "dev":"nodemon"
